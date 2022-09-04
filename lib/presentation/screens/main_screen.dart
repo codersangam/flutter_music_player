@@ -1,6 +1,8 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+
+import '../../core/constants/my_colors.dart';
 import 'home/home_screen_imports.dart';
 import 'playlists/playlists_screen_imports.dart';
 import 'song/song_screen_imports.dart';
@@ -15,10 +17,10 @@ class MainScreen extends StatefulWidget {
 class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _pages = [
-    HomeScreen(),
-    PlaylistsScreen(),
-    Songscreen(),
+  static final List<Widget> _pages = [
+    const HomeScreen(),
+    const SongScreen(),
+    const PlaylistsScreen(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -29,29 +31,31 @@ class _MainScreenState extends State<MainScreen> {
       extendBody: true,
       bottomNavigationBar: DotNavigationBar(
         currentIndex: _selectedIndex,
+        backgroundColor: MyColors.deepPurple,
         onTap: (index) {
           setState(() {
             _selectedIndex = index;
           });
         },
-        dotIndicatorColor: Colors.transparent,
+        dotIndicatorColor: MyColors.white,
+        unselectedItemColor: MyColors.white,
         items: [
           /// Home
           DotNavigationBarItem(
             icon: const Icon(LineIcons.home),
-            selectedColor: Colors.orange,
+            selectedColor: MyColors.white,
           ),
 
-          /// Likes
+          /// PlayLists
           DotNavigationBarItem(
             icon: const Icon(LineIcons.playCircle),
-            selectedColor: Colors.pink,
+            selectedColor: MyColors.white,
           ),
 
-          /// Search
+          /// Song
           DotNavigationBarItem(
             icon: const Icon(LineIcons.heart),
-            selectedColor: Colors.purple,
+            selectedColor: MyColors.white,
           ),
         ],
       ),
