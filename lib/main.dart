@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:music_player/core/constants/my_colors.dart';
 import 'presentation/router/router_imports.gr.dart';
 
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.apply(
               bodyColor: MyColors.white,
               displayColor: MyColors.white,
+              fontFamily: GoogleFonts.montserrat().fontFamily,
             ),
       ),
       routerDelegate: _appRouter.delegate(),
