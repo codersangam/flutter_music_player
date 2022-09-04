@@ -6,7 +6,7 @@ part of 'router_imports.dart';
     AutoRoute(page: MainScreen, initial: true),
     AutoRoute(page: HomeScreen),
     AutoRoute(page: PlaylistsScreen),
-    AutoRoute(page: Songscreen),
+    AutoRoute(page: SongScreen),
   ],
 )
 class $AppRouter {}
